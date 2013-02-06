@@ -1,0 +1,89 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<title>Touit_v2</title>
+	<link rel="stylesheet" href="assets/css/style.css?v=0.1" />
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu:300,500,300italic"/>
+	
+	<link id="dynamic-favicon" rel="shortcut icon" type="image/png" href="about:blank" />
+</head>
+<body>
+
+	<aside>
+		<h1>Clinvivo's touit</h1>
+
+		<h2><!--&#9825; -->Contacts</h2>
+		<ul>
+			<li><p><img src="http://www.neofyt.com/assets/img/Neofyt.jpg" class="avatar__img"/><span>Laloutre</span> <span class="right free">&#9679;</span></p></li>
+			<li><p><img src="http://www.neofyt.com/assets/img/Neofyt.jpg" class="avatar__img"/><span>Laloutre</span> <span class="right busy">&#9679;</span></p></li>
+			<li><p><img src="http://www.neofyt.com/assets/img/Neofyt.jpg" class="avatar__img"/><span>Laloutre</span> <span class="right away">&#9679;</span></p></li>
+			
+
+
+		</ul>
+
+	</aside>
+
+	<header>
+		<span class="avatar__holder">
+
+			<div class="dropdown" id="status">
+
+				<a class="dropdown_button dropdown_close" href="#">
+					<span class="free">Disponible</span>&nbsp;&nbsp;<span class="dot free">&#9679;</span>&nbsp;&nbsp;
+				</a>
+				<a class="dropdown_button dropdown_open" href="#">
+					<span class="dot free">&#9679;</span>&nbsp;&nbsp;
+				</a>
+
+				<ul class="dropdown_content">
+					<li><a href="#" class="status_button" data-status="free" data-texte="Disponible">Disponible</a></li>
+					<li><a href="#" class="status_button" data-status="busy" data-texte="Occup&eacute;">Occup&eacute;</a></li>
+					<li><a href="#" class="status_button" data-status="away" data-texte="Absent">Absent</a></li>
+				</ul>
+			</div>
+
+			<img src="http://www.neofyt.com/assets/img/Neofyt.jpg" class="avatar__img"/>
+			<div class="dropdown" id="profil">
+
+				<a class="dropdown_button dropdown_close" href="#"><span class="arrow">Guillaume <span class="grey">&nbsp;&#9650;</span></span></a>
+				<a class="dropdown_button dropdown_open" href="#"><span class="arrow">Guillaume <span class="grey">&nbsp;&#9660;</span></span></a>
+
+				<ul class="dropdown_content">
+					<li><a href="#" id="">Profil</a></li>
+					<li><a href="#" id="">Comptes</a></li>
+					<li><a href="#" id="">D&eacute;connexion</a></li>
+				</ul>
+			</div>
+
+		</span>
+
+	</header>
+
+	<div id="wrapper">
+		<div id="main">
+			<div id="container">
+				
+				<ul>
+					<li class="current">Conv 1</li>
+					<li>Conv 2</li>
+					<li>Conv 3</li>
+				</ul>
+
+				<div class="onglet">
+					<textarea placeholder="Message"></textarea>
+				</div>
+				<!--<div class="onglet">Onglet 2</div>-->
+
+
+			</div>
+		</div>
+	</div>
+
+	<canvas></canvas>
+    
+	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<script src="assets/js/app.js"></script>
+
+</body>
+</html>
