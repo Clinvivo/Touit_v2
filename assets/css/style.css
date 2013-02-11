@@ -258,12 +258,12 @@ textarea {
 	resize: vertical;
 }
 
-#container ul {
+#ulTabs {
 	list-style-type: none;
 	height: 26px;
 }
 
-	#container ul li {
+	#ulTabs li {
 		display: inline-block;
 		/*background: #656565;
 		border: solid 1px #656565;
@@ -274,7 +274,7 @@ textarea {
 		border-right: solid 1px transparent;
 	}
 
-		#container ul li.current, #container ul li:not(.current):hover {
+		#ulTabs li.current, #ulTabs li:not(.current):hover {
 			background: #fff;
 			color: #656565;
 			cursor: pointer;
@@ -282,7 +282,7 @@ textarea {
 			border-bottom: 0;
 		}
 
-		#container ul li.current {
+		#ulTabs li.current {
 			box-shadow: 0 4px 10px -4px #bbb inset;
 		}
 

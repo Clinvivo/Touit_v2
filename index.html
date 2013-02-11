@@ -3,6 +3,7 @@
 	<meta charset="utf-8">
 	<title>Touit_v2</title>
 	<link rel="stylesheet" href="assets/css/style.css?v=0.1" />
+	<link rel="stylesheet" href="assets/css/jquery.mentionsInput.css"/>
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu:300,500,300italic"/>
 	
 	<link id="dynamic-favicon" rel="shortcut icon" type="image/png" href="about:blank" />
@@ -64,14 +65,14 @@
 		<div id="main">
 			<div id="container">
 				
-				<ul>
+				<ul id="ulTabs">
 					<li class="current">Conv 1</li>
 					<li>Conv 2</li>
 					<li>Conv 3</li>
 				</ul>
 
 				<div class="onglet">
-					<textarea placeholder="Message"></textarea>
+					<textarea class="mention" placeholder="Message"></textarea>
 				</div>
 				<!--<div class="onglet">Onglet 2</div>-->
 
@@ -83,6 +84,9 @@
 	<canvas></canvas>
     
 	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<script src="assets/js/underscore-min.js"></script>
+	<script src="assets/js/jquery.elastic.source.js"></script>
+	<script src="assets/js/jquery.mentionsInput.js"></script>
 	<script src="assets/js/app.js"></script>
 
 </body>

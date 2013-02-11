@@ -9,9 +9,9 @@ var canvas = document.getElementsByTagName('canvas')[0],
 	document.head = document.head || document.getElementsByTagName('head')[0];
 
 	var colors = {
-	    "free": "#349534",
-	    "busy": "#d12F19",
-	    "away": "#656565"
+		"free": "#349534",
+		"busy": "#d12F19",
+		"away": "#656565"
 	};
 
 
@@ -29,18 +29,18 @@ function drawFavicon(color, msg) {
 	ctx.fill();
 
 	ctx.fillStyle = "#fff";
-    ctx.font = "6pt Arial";
-    if (msg.length > 1){
-    	ctx.fillText(msg, 4, 11);
-    } else {
-    	ctx.fillText(msg, 6, 11);
-    }
+	ctx.font = "6pt Arial";
+	if (msg.length > 1){
+		ctx.fillText(msg, 4, 11);
+	} else {
+		ctx.fillText(msg, 6, 11);
+	}
 
-    // Génération du lien
-    if (browser.chrome){
-    	$('link[rel="shortcut icon"]').prop('href', canvas.toDataURL());
-    } else {
-    	var link = document.createElement('link'),
+	// Génération du lien
+	if (browser.chrome){
+		$('link[rel="shortcut icon"]').prop('href', canvas.toDataURL());
+	} else {
+		var link = document.createElement('link'),
 		oldLink = document.getElementById('dynamic-favicon');
 		link.type = "image/png";
 		link.rel = 'shortcut icon';
@@ -54,14 +54,14 @@ function drawFavicon(color, msg) {
 }
 
 function changeStatus() {
-    var status = $(this).data("status"),
-        texte = $(this).data("texte");
+	var status = $(this).data("status"),
+		texte = $(this).data("texte");
 
-    $("#status .dropdown_button").empty();
-    $("#status .dropdown_close").append("<span class='" + status + "'>" + texte + "</span>  <span class='dot " + status + "'>●</span>  ");
-    $("#status .dropdown_open").append("<span class='dot " + status + "'>●</span>  ");
+	$("#status .dropdown_button").empty();
+	$("#status .dropdown_close").append("<span class='" + status + "'>" + texte + "</span>  <span class='dot " + status + "'>●</span>  ");
+	$("#status .dropdown_open").append("<span class='dot " + status + "'>●</span>  ");
 
-    //drawFavicon(colors.status, "7");
+	//drawFavicon(colors.status, "7");
 }
 
 
@@ -87,17 +87,17 @@ Array.prototype.max = function() {
 }
 
 var entityMap = {
-    "é": "e",
-    " ": "_",
-    ".": "",
-    "è": "e",
-    "ï": "i"
+	"é": "e",
+	" ": "_",
+	".": "",
+	"è": "e",
+	"ï": "i"
 };
 
 function escapeChar(string) {
-    return String(string).replace(/[é .èï]/g, function(s) {
-        return entityMap[s];
-    });
+	return String(string).replace(/[é .èï]/g, function(s) {
+		return entityMap[s];
+	});
 }
 
 // Browser sniffing
@@ -149,20 +149,36 @@ var browser = {
 		});
 
 		$(".status_button").click(function(e) {
-            e.preventDefault();
+			e.preventDefault();
 
-            var status = $(this).data("status"),
-                texte = $(this).data("texte");
+			var status = $(this).data("status"),
+				texte = $(this).data("texte");
 
-            $("#status .dropdown_button").empty();
-            $("#status .dropdown_close").append("<span class='" + status + "'>" + texte + "</span>  <span class='dot " + status + "'>●</span>  ").css("display", "none");
-            $("#status .dropdown_open").append("<span class='dot " + status + "'>●</span>  ").css("display", "block");
-            $("#status .dropdown_content").css("display", "none");
+			$("#status .dropdown_button").empty();
+			$("#status .dropdown_close").append("<span class='" + status + "'>" + texte + "</span>  <span class='dot " + status + "'>●</span>  ").css("display", "none");
+			$("#status .dropdown_open").append("<span class='dot " + status + "'>●</span>  ").css("display", "block");
+			$("#status .dropdown_content").css("display", "none");
 
-            window.displayedMenu = false;
+			window.displayedMenu = false;
 
-            drawFavicon(colors[status], "7");
-        });
+			drawFavicon(colors[status], "7");
+		});
+
+		$('textarea.mention').mentionsInput({
+		  onDataRequest:function (mode, query, callback) {
+			var data = [
+				{ id:1, name:'@Guillaume', 'avatar':'http://cdn0.4dots.com/i/customavatars/avatar7112_1.gif', 'type':'contact' },
+				{ id:2, name:'@Laloutre', 'avatar':'http://cdn0.4dots.com/i/customavatars/avatar7112_1.gif', 'type':'contact' },
+				{ id:3, name:'@Sarah', 'avatar':'http://cdn0.4dots.com/i/customavatars/avatar7112_1.gif', 'type':'contact' },
+				{ id:4, name:'@Elodie', 'avatar':'http://cdn0.4dots.com/i/customavatars/avatar7112_1.gif', 'type':'contact' }
+			];
+
+			data = _.filter(data, function(item) { return item.name.toLowerCase().indexOf(query.toLowerCase()) > -1 });
+
+			callback.call(this, data);
+		  },
+		  minChars: 1
+		});
 
 		drawFavicon(colors.free, "10");
 
