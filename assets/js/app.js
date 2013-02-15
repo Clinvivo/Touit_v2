@@ -155,8 +155,8 @@ var browser = {
 				texte = $(this).data("texte");
 
 			$("#status .dropdown_button").empty();
-			$("#status .dropdown_close").append("<span class='" + status + "'>" + texte + "</span>  <span class='dot " + status + "'>●</span>  ").css("display", "none");
-			$("#status .dropdown_open").append("<span class='dot " + status + "'>●</span>  ").css("display", "block");
+			$("#status .dropdown_close").append("<span class='" + status + "'>" + texte + "</span>&nbsp;&nbsp;<span class='dot " + status + "'>&#9679;</span>&nbsp;&nbsp;").css("display", "none");
+			$("#status .dropdown_open").append("<span class='dot " + status + "'>&#9679;</span>&nbsp;&nbsp;").css("display", "block");
 			$("#status .dropdown_content").css("display", "none");
 
 			window.displayedMenu = false;
